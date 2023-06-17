@@ -1,8 +1,8 @@
-import { listGenerator } from "./randomFunctions";
+import { listGenerator } from "../functions/randomFunctions";
 
 function bubbleSort3(list: number[]) {
 
-    function swap(list: number[], index: number, accumulator: number[]) {
+    function swap(list: number[], index: number, accumulator: number[]): number[] {
 
         if (list[index] === undefined) {
             return accumulator
