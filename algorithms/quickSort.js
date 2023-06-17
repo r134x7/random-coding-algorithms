@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var randomFunctions_1 = require("../functions/randomFunctions");
-// Soure of original solution: https://stackoverflow.com/questions/5185864/javascript-quicksort
+// Source of original solution: https://stackoverflow.com/questions/5185864/javascript-quicksort
 /*
     Spent time improving on the original solution found as the Space complexity given by "Benny Code" was not optimal.
 */
