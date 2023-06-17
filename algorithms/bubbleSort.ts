@@ -57,6 +57,11 @@ function bubbleSortLoop(list: number[]) {
 
 const generateList = listGenerator(20, 100);
 
+const loops = 100;
+const listLength = Number(process.argv[2]);
+const numberRange = 10000;
+const longList = listGenerator(listLength, numberRange);
+
 const b0 = performance.now();
 const sortedListR = bubbleSortRecursive(generateList);
 const b1 = performance.now();
@@ -64,9 +69,21 @@ const b1 = performance.now();
 const b2 = performance.now();
 const sortedListL = bubbleSortLoop(generateList);
 const b3 = performance.now();
+
+let averageTime = 0; 
+
+for (let i = 0; i < loops; i++) {
+    const b4 = performance.now();
+    bubbleSortLoop(longList);
+    const b5 = performance.now();
+
+    averageTime = averageTime + (b5 - b4)
+}
   
 console.log(sortedListR)
 console.log(`Recursion time: ${b1 - b0} milliseconds.`);
 
 console.log(sortedListL)
 console.log(`Loop time: ${b3 - b2} milliseconds.`);
+
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTime / loops} milliseconds, Total Time: ${averageTime / 1000} seconds.`)

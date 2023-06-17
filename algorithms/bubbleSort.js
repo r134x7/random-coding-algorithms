@@ -48,13 +48,25 @@ function bubbleSortLoop(list) {
     return sortedList;
 }
 var generateList = (0, randomFunctions_1.listGenerator)(20, 100);
+var loops = 100;
+var listLength = Number(process.argv[2]);
+var numberRange = 10000;
+var longList = (0, randomFunctions_1.listGenerator)(listLength, numberRange);
 var b0 = performance.now();
 var sortedListR = bubbleSortRecursive(generateList);
 var b1 = performance.now();
 var b2 = performance.now();
 var sortedListL = bubbleSortLoop(generateList);
 var b3 = performance.now();
+var averageTime = 0;
+for (var i = 0; i < loops; i++) {
+    var b4 = performance.now();
+    bubbleSortLoop(longList);
+    var b5 = performance.now();
+    averageTime = averageTime + (b5 - b4);
+}
 console.log(sortedListR);
 console.log("Recursion time: ".concat(b1 - b0, " milliseconds."));
 console.log(sortedListL);
 console.log("Loop time: ".concat(b3 - b2, " milliseconds."));
+console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTime / loops, " milliseconds, Total Time: ").concat(averageTime / 1000, " seconds."));
