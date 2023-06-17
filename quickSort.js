@@ -1,3 +1,4 @@
+import { listGenerator } from "./randomFunctions"
 // Soure of original solution: https://stackoverflow.com/questions/5185864/javascript-quicksort
 /*
     Spent time improving on the original solution found as the Space complexity given by "Benny Code" was not optimal.
@@ -25,11 +26,6 @@ function quickSort3(list) {
     ));
 };
 
-  const unsorted = [];
-  for (let i = 0; i < 20; i++) {
-    unsorted.push(Math.round(Math.random() * 2000));
-  }
-
-  const sorted = quickSort3(unsorted);
+const sortedList = quickSort3(listGenerator(20, 2000));
   
-  console.log(sorted);
+console.log(sortedList);
