@@ -3,7 +3,7 @@ import { listGenerator } from "../functions/randomFunctions";
 /*
     Spent time improving on the original solution found as the Space complexity given by "Benny Code" was not optimal.
 */
-function quickSort3(list: number[]): number[] {
+function quickSortRecursive(list: number[]): number[] {
 
     if (list.length <= 1) {
         return list
@@ -19,13 +19,67 @@ function quickSort3(list: number[]): number[] {
         }
     }
 
-    return quickSort3(
+    return quickSortRecursive(
         subList(list, 0, list[Math.floor(list.length / 2)], [], "lt")
-    ).concat(list[Math.floor(list.length / 2)], quickSort3(
+    ).concat(list[Math.floor(list.length / 2)], quickSortRecursive(
         subList(list, 0, list[Math.floor(list.length / 2)], [], "gt")
     ));
 };
 
-const sortedList = quickSort3(listGenerator(20, 2000));
-  
-console.log(sortedList);
+function quickSortLoop(list: number[]): number[] {
+
+    if (list.length <= 1) {
+        return list
+    }
+
+    let pivot = list[Math.floor(list.length / 2)];
+
+    let listLeft = [];
+    let listRight = [];
+
+    let index = 0
+
+    while (list[index] !== undefined) {
+        if (list[index] < pivot) {
+            listLeft.push(list[index]);
+        } else if (list[index] > pivot) {
+            listRight.push(list[index]);
+        }
+
+        index++;
+    }
+
+    return quickSortLoop(listLeft)
+        .concat(pivot)
+        .concat(quickSortLoop(listRight))
+}
+
+const loops = 100;
+const listLength = Number(process.argv[2]);
+const numberRange = 10000;
+const unsortedList = listGenerator(listLength, numberRange);
+
+let averageTimeR = 0;
+let averageTimeL = 0;
+
+for (let i = 0; i < loops; i++) {
+    const c0 = performance.now();
+    quickSortRecursive(unsortedList)
+    const c1 = performance.now();
+    
+    averageTimeR = averageTimeR + (c1 - c0);
+}
+
+for (let i = 0; i < loops; i++) {
+    const c2 = performance.now();
+    quickSortLoop(unsortedList);
+    const c3 = performance.now();
+
+    averageTimeL = averageTimeL + (c3 - c2);
+}
+
+console.log("Recursion:")
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeR / loops} milliseconds, Total Time: ${averageTimeR / 1000} seconds.`)
+
+console.log("Loop:");
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeL / loops} milliseconds, Total Time: ${averageTimeL / 1000} seconds.`)
