@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var randomFunctions_1 = require("../functions/randomFunctions");
 function bogoSortLoop(list) {
     var sorted = false;
     var sortedList = list;
@@ -21,11 +22,16 @@ function bogoSortLoop(list) {
                 sortCount = 0;
                 index = 0;
                 var indexCheck = [];
+                var currentList = sortedList;
                 while (indexCheck.length < list.length) {
+                    // this method doesn't work for duplicate values
+                    // let randomIndex = Math.floor(Math.random() * list.length);
+                    // if (!indexCheck.includes(sortedList[randomIndex])) {
+                    //     indexCheck.push(sortedList[randomIndex])
+                    // }
                     var randomIndex = Math.floor(Math.random() * list.length);
-                    if (!indexCheck.includes(sortedList[randomIndex])) {
-                        indexCheck.push(sortedList[randomIndex]);
-                    }
+                    indexCheck = indexCheck.concat(currentList.slice(randomIndex, randomIndex + 1));
+                    currentList = currentList.slice(0, randomIndex).concat(currentList.slice(randomIndex + 1));
                 }
                 sortedList = indexCheck;
             }
@@ -44,7 +50,7 @@ function bogoSortLoop(list) {
 //     const b1 = performance.now();
 //     averageTime = averageTime + (b1 - b0)
 // }
-// const generateList = listGenerator(5, 100);
-var resultList = bogoSortLoop([4, 1, 2]);
+var generateList = (0, randomFunctions_1.listGenerator)(5, 100);
+var resultList = bogoSortLoop(generateList);
 console.log(resultList);
 // console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTime / loops} milliseconds, Total Time: ${averageTime / 1000} seconds.`)
