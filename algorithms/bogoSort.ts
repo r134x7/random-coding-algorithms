@@ -3,7 +3,6 @@ import { listGenerator } from "../functions/randomFunctions";
 function bogoSortLoop(list: number[]) {
 
     let sorted = false;
-    // let sorting: number[] = [];
     let sortedList: number[] = list;
     let index = 0;
     let sortCount = 0;
@@ -13,12 +12,14 @@ function bogoSortLoop(list: number[]) {
         if (sortedList[index] > sortedList[index+1]) {
             index++;
             sortCount++;
+        } else {
+            index++;
         }
 
         if (index > list.length - 1) {
             if (sortCount === 0) {
                 sorted = true;
-                break
+
             } else {
                 sortCount = 0;
                 index = 0;
@@ -27,7 +28,7 @@ function bogoSortLoop(list: number[]) {
                 while (indexCheck.length < list.length) {
                     
                     let randomIndex = Math.floor(Math.random() * list.length);
-                    if (!indexCheck.includes(randomIndex)) {
+                    if (!indexCheck.includes(sortedList[randomIndex])) {
                         indexCheck.push(sortedList[randomIndex])
                     }
                 }
@@ -55,8 +56,8 @@ function bogoSortLoop(list: number[]) {
 //     averageTime = averageTime + (b1 - b0)
 // }
 
-const generateList = listGenerator(20, 100);
-const resultList = bogoSortLoop(generateList);
+// const generateList = listGenerator(5, 100);
+const resultList = bogoSortLoop([4,1,2]);
 console.log(resultList)
 
 // console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTime / loops} milliseconds, Total Time: ${averageTime / 1000} seconds.`)
