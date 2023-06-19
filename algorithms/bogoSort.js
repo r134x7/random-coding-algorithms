@@ -39,18 +39,18 @@ function bogoSortLoop(list) {
     } while (sorted === false);
     return sortedList;
 }
-// const loops = 100;
-// const listLength = Number(process.argv[2]);
-// const numberRange = 10000;
-// const longList = listGenerator(listLength, numberRange);
-// let averageTime = 0; 
-// for (let i = 0; i < loops; i++) {
-//     const b0 = performance.now();
-//     bogoSortLoop(longList);
-//     const b1 = performance.now();
-//     averageTime = averageTime + (b1 - b0)
-// }
-var generateList = (0, randomFunctions_1.listGenerator)(5, 100);
-var resultList = bogoSortLoop(generateList);
-console.log(resultList);
-// console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTime / loops} milliseconds, Total Time: ${averageTime / 1000} seconds.`)
+var loops = 100;
+var listLength = Number(process.argv[2]);
+var numberRange = 10000;
+var longList = (0, randomFunctions_1.listGenerator)(listLength, numberRange);
+var averageTime = 0;
+for (var i = 0; i < loops; i++) {
+    var b0 = performance.now();
+    bogoSortLoop(longList);
+    var b1 = performance.now();
+    averageTime = averageTime + (b1 - b0);
+}
+// const generateList = listGenerator(5, 100);
+// const resultList = bogoSortLoop(generateList);
+// console.log(resultList)
+console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTime / loops, " milliseconds, Total Time: ").concat(averageTime / 1000, " seconds."));
