@@ -210,3 +210,18 @@ Simple squared operation - Array.map([List of Objects]) (JavaScript):
 - Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 908.8689880043269 milliseconds, Total Time: 90.88689880043268 seconds.
 
 - Not attemping 1 million list length due to heap allocation memory issue with creating that many objects.
+
+Simple squared operation - For Loop mutate Objects (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.000941997766494751 milliseconds, Total Time: 0.0000941997766494751 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.046536996364593505 milliseconds, Total Time: 0.00465369963645935 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.20755599737167357 milliseconds, Total Time: 0.020755599737167358 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 1.6549550026655198 milliseconds, Total Time: 0.16549550026655196 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 62.982555997371676 milliseconds, Total Time: 6.298255599737168 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 264.39233500123026 milliseconds, Total Time: 26.439233500123024 seconds.
+
+- Not attemping 1 million list length due to heap allocation memory issue with creating that many objects.

@@ -97,12 +97,17 @@ for (let i = 0; i < loops; i++) {
     averageTimeObject = averageTimeObject + (c9 - c8);
 
     const c10 = performance.now();
-    xObject.map(elem => {
-        return {
-            ...elem,
-            value: squared(elem.value)
-        }
-    })
+    // xObject.map(elem => {
+    //     return {
+    //         ...elem,
+    //         value: squared(elem.value)
+    //     }
+    // })
+    for (let i = 0; i < xObject.length; i++) {
+       xObject[i] = {
+        value: squared(xObject[i].value)
+       } 
+    }
     const c11 = performance.now();
     averageTimeMapOverObject = averageTimeMapOverObject + (c11 - c10);
 
@@ -111,5 +116,6 @@ for (let i = 0; i < loops; i++) {
 console.log("Array Object:");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)
 
-console.log("Array.map Over Object:");
+// console.log("Array.map Over Object:");
+console.log("For Loop mutate object:");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMapOverObject / loops} milliseconds, Total Time: ${averageTimeMapOverObject / 1000} seconds.`)
