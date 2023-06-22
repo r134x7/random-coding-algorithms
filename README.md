@@ -84,3 +84,78 @@ Bogo Sort - While Loop (JavaScript), Time complexity: O(n!):
 - Loops: 100, List Length: 9, Number Range: 0 to 9999, Time per loop: 3043.0196929991243 milliseconds, Total Time: 304.30196929991246 seconds.
 
 - Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 34240.82750300035 milliseconds, Total Time: 3424.082750300035 seconds.
+
+Simple squared operation - While Loop (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.004590001106262207 milliseconds, Total Time: 0.0004590001106262207 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.0024610066413879392 milliseconds, Total Time: 0.00024610066413879395 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.005519999861717224 milliseconds, Total Time: 0.0005519999861717224 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.06030599892139435 milliseconds, Total Time: 0.006030599892139435 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.2956059968471527 milliseconds, Total Time: 0.02956059968471527 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 2.0107570058107376 milliseconds, Total Time: 0.20107570058107377 seconds.
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 95.67014799773693 milliseconds, Total Time: 9.567014799773693 seconds.
+
+Simple squared operation - Array Map (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.001383002996444702 milliseconds, Total Time: 0.0001383002996444702 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.0008390021324157715 milliseconds, Total Time: 0.00008390021324157715 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.0031039965152740477 milliseconds, Total Time: 0.0003103996515274048 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.015189996361732483 milliseconds, Total Time: 0.0015189996361732482 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.1508199989795685 milliseconds, Total Time: 0.015081999897956848 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 1.4586479985713958 milliseconds, Total Time: 0.1458647998571396 seconds.
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 12.894091998934746 milliseconds, Total Time: 1.2894091998934747 seconds.
+
+Simple squared operation - Array Reduce (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.00042099952697753905 milliseconds, Total Time: 0.00004209995269775391 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.0009089982509613037 milliseconds, Total Time: 0.00009089982509613037 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.008121998906135559 milliseconds, Total Time: 0.0008121998906135559 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.021781999468803406 milliseconds, Total Time: 0.0021781999468803406 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.18839100122451782 milliseconds, Total Time: 0.018839100122451782 seconds
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 1.0358729976415635 milliseconds, Total Time: 0.10358729976415634 seconds.
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 9.014257999062538 milliseconds, Total Time: 0.9014257999062538 seconds.
+
+Simple squared operation - Map() (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.0004019969701766968 milliseconds, Total Time: 0.000040199697017669676 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.0006960022449493408 milliseconds, Total Time: 0.00006960022449493409 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.004718003869056702 milliseconds, Total Time: 0.0004718003869056702 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.04047399699687958 milliseconds, Total Time: 0.004047399699687958 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.26347400307655333 milliseconds, Total Time: 0.026347400307655335 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 2.6480289989709855 milliseconds, Total Time: 0.26480289989709854 seconds. 
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 68.23226600408555 milliseconds, Total Time: 6.823226600408554 seconds. 
+
+Simple squared operation - List of Objects (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.0004079967737197876 milliseconds, Total Time: 0.00004079967737197876 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.001173000931739807 milliseconds, Total Time: 0.00011730009317398072 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.024287999868392945 milliseconds, Total Time: 0.0024287999868392945 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.1017880004644394 milliseconds, Total Time: 0.010178800046443939 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.8963460010290146 milliseconds, Total Time: 0.08963460010290146 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 22.445885006189346 milliseconds, Total Time: 2.2445885006189346 seconds.
+
+- Cannot create a list containing 1 million objects to due exceeding heap allocation memory.
