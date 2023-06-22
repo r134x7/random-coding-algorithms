@@ -1,5 +1,9 @@
 import { listGenerator } from "../functions/randomFunctions";
 
+interface Squared {
+    value: number
+}
+
 const loops = 100;
 const listLength = Number(process.argv[2]);
 const numberRange = 10000;
@@ -51,13 +55,14 @@ for (let i = 0; i < loops; i++) {
 console.log("Array Reduce:");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeArrayReduce / loops} milliseconds, Total Time: ${averageTimeArrayReduce / 1000} seconds.`)
 
-let xMap = new Map();
+let xMap = new Map<number, Squared>();
 
 for (let i = 0; i < loops; i++) {
     let index = 0;
     const c6 = performance.now();
     while (unsortedList[index] !== undefined) {
-        xMap.set(index, squared(unsortedList[index]))
+        // xMap.set(index, squared(unsortedList[index]))
+        xMap.set(index, { value: squared(unsortedList[index])})
         index++
     }
     const c7 = performance.now();
@@ -67,18 +72,18 @@ for (let i = 0; i < loops; i++) {
 console.log("Map():");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMAP / loops} milliseconds, Total Time: ${averageTimeMAP / 1000} seconds.`)
 
-let xObject = [];
+// let xObject = [];
 
-for (let i = 0; i < loops; i++) {
-    let index = 0;
-    const c8 = performance.now();
-    while (unsortedList[index] !== undefined) {
-        xObject.push({ index: squared(unsortedList[index])})
-        index++
-    }
-    const c9 = performance.now();
-    averageTimeObject = averageTimeObject + (c9 - c8);
-}
+// for (let i = 0; i < loops; i++) {
+//     let index = 0;
+//     const c8 = performance.now();
+//     while (unsortedList[index] !== undefined) {
+//         xObject.push({ index: squared(unsortedList[index])})
+//         index++
+//     }
+//     const c9 = performance.now();
+//     averageTimeObject = averageTimeObject + (c9 - c8);
+// }
 
-console.log("Array Object:");
-console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)
+// console.log("Array Object:");
+// console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)

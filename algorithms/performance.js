@@ -46,7 +46,8 @@ for (var i = 0; i < loops; i++) {
     var index = 0;
     var c6 = performance.now();
     while (unsortedList[index] !== undefined) {
-        xMap.set(index, squared(unsortedList[index]));
+        // xMap.set(index, squared(unsortedList[index]))
+        xMap.set(index, { value: squared(unsortedList[index]) });
         index++;
     }
     var c7 = performance.now();
@@ -54,16 +55,16 @@ for (var i = 0; i < loops; i++) {
 }
 console.log("Map():");
 console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTimeMAP / loops, " milliseconds, Total Time: ").concat(averageTimeMAP / 1000, " seconds."));
-var xObject = [];
-for (var i = 0; i < loops; i++) {
-    var index = 0;
-    var c8 = performance.now();
-    while (unsortedList[index] !== undefined) {
-        xObject.push({ index: squared(unsortedList[index]) });
-        index++;
-    }
-    var c9 = performance.now();
-    averageTimeObject = averageTimeObject + (c9 - c8);
-}
-console.log("Array Object:");
-console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTimeObject / loops, " milliseconds, Total Time: ").concat(averageTimeObject / 1000, " seconds."));
+// let xObject = [];
+// for (let i = 0; i < loops; i++) {
+//     let index = 0;
+//     const c8 = performance.now();
+//     while (unsortedList[index] !== undefined) {
+//         xObject.push({ index: squared(unsortedList[index])})
+//         index++
+//     }
+//     const c9 = performance.now();
+//     averageTimeObject = averageTimeObject + (c9 - c8);
+// }
+// console.log("Array Object:");
+// console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)

@@ -100,6 +100,8 @@ Simple squared operation - While Loop (JavaScript):
 
 - Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 95.67014799773693 milliseconds, Total Time: 9.567014799773693 seconds.
 
+- (Second Attempt) Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 54.31556899905205 milliseconds, Total Time: 5.431556899905205 seconds.
+
 Simple squared operation - Array Map (JavaScript):
 - Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.001383002996444702 milliseconds, Total Time: 0.0001383002996444702 seconds.
 
@@ -115,6 +117,8 @@ Simple squared operation - Array Map (JavaScript):
 
 - Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 12.894091998934746 milliseconds, Total Time: 1.2894091998934747 seconds.
 
+- (Second Attempt) Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 10.691240000128746 milliseconds, Total Time: 1.0691240000128746 seconds. 
+
 Simple squared operation - Array Reduce (JavaScript):
 - Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.00042099952697753905 milliseconds, Total Time: 0.00004209995269775391 seconds.
 
@@ -129,6 +133,8 @@ Simple squared operation - Array Reduce (JavaScript):
 - Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 1.0358729976415635 milliseconds, Total Time: 0.10358729976415634 seconds.
 
 - Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 9.014257999062538 milliseconds, Total Time: 0.9014257999062538 seconds.
+
+- (Second Attempt) Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 8.532714999318124 milliseconds, Total Time: 0.8532714999318123 seconds. 
 
 Simple squared operation - Map() (JavaScript):
 - Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.0004019969701766968 milliseconds, Total Time: 0.000040199697017669676 seconds.
@@ -159,3 +165,18 @@ Simple squared operation - List of Objects (JavaScript):
 - Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 22.445885006189346 milliseconds, Total Time: 2.2445885006189346 seconds.
 
 - Cannot create a list containing 1 million objects to due exceeding heap allocation memory.
+
+Simple squared operation - Map<number, {value: number}>() (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.0002250039577484131 milliseconds, Total Time: 0.00002250039577484131 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.001387002468109131 milliseconds, Total Time: 0.00013870024681091308 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.006608003973960877 milliseconds, Total Time: 0.0006608003973960876 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.04827600121498108 milliseconds, Total Time: 0.004827600121498108 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.4025999975204468 milliseconds, Total Time: 0.04025999975204468 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 4.891608999371528 milliseconds, Total Time: 0.48916089993715284 seconds.
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 93.42519599676132 milliseconds, Total Time: 9.342519599676132 seconds. 
