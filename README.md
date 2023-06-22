@@ -196,3 +196,17 @@ Map.ForEach() => Simple squared operation - Map<number, {value: number}>() (Java
 
 - Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 113.38752399861812 milliseconds, Total Time: 11.338752399861812 seconds.
 
+Simple squared operation - Array.map([List of Objects]) (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.0004580038785934448 milliseconds, Total Time: 0.000045800387859344484 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.04995100319385529 milliseconds, Total Time: 0.004995100319385528 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.4539839917421341 milliseconds, Total Time: 0.04539839917421341 seconds. 
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 4.778751997947693 milliseconds, Total Time: 0.4778751997947693 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 77.94480099916458 milliseconds, Total Time: 7.794480099916458 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 908.8689880043269 milliseconds, Total Time: 90.88689880043268 seconds.
+
+- Not attemping 1 million list length due to heap allocation memory issue with creating that many objects.

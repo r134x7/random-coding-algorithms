@@ -17,6 +17,7 @@ let averageTimeArrayReduce = 0;
 let averageTimeMAP = 0;
 let averageTimeMapForEach = 0;
 let averageTimeObject = 0;
+let averageTimeMapOverObject = 0;
 
 let listFor = [];
 
@@ -82,18 +83,33 @@ console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${n
 
 console.log("Map.ForEach():");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMapForEach / loops} milliseconds, Total Time: ${averageTimeMapForEach / 1000} seconds.`)
-// let xObject = [];
 
-// for (let i = 0; i < loops; i++) {
-//     let index = 0;
-//     const c8 = performance.now();
-//     while (unsortedList[index] !== undefined) {
-//         xObject.push({ index: squared(unsortedList[index])})
-//         index++
-//     }
-//     const c9 = performance.now();
-//     averageTimeObject = averageTimeObject + (c9 - c8);
-// }
+let xObject: Squared[] = [];
 
-// console.log("Array Object:");
-// console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)
+for (let i = 0; i < loops; i++) {
+    let index = 0;
+    const c8 = performance.now();
+    while (unsortedList[index] !== undefined) {
+        xObject.push({ value: unsortedList[index] })
+        index++
+    }
+    const c9 = performance.now();
+    averageTimeObject = averageTimeObject + (c9 - c8);
+
+    const c10 = performance.now();
+    xObject.map(elem => {
+        return {
+            ...elem,
+            value: squared(elem.value)
+        }
+    })
+    const c11 = performance.now();
+    averageTimeMapOverObject = averageTimeMapOverObject + (c11 - c10);
+
+}
+
+console.log("Array Object:");
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeObject / loops} milliseconds, Total Time: ${averageTimeObject / 1000} seconds.`)
+
+console.log("Array.map Over Object:");
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMapOverObject / loops} milliseconds, Total Time: ${averageTimeMapOverObject / 1000} seconds.`)
