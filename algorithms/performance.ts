@@ -15,6 +15,7 @@ let averageTimeLoop = 0;
 let averageTimeArrayMap = 0;
 let averageTimeArrayReduce = 0;
 let averageTimeMAP = 0;
+let averageTimeMapForEach = 0;
 let averageTimeObject = 0;
 
 let listFor = [];
@@ -59,19 +60,28 @@ let xMap = new Map<number, Squared>();
 
 for (let i = 0; i < loops; i++) {
     let index = 0;
+
     const c6 = performance.now();
     while (unsortedList[index] !== undefined) {
         // xMap.set(index, squared(unsortedList[index]))
-        xMap.set(index, { value: squared(unsortedList[index])})
+        // xMap.set(index, { value: squared(unsortedList[index])})
+        xMap.set(index, { value: unsortedList[index]})
         index++
     }
     const c7 = performance.now();
     averageTimeMAP = averageTimeMAP + (c7 - c6);
+
+    const c8 = performance.now();
+    xMap.forEach((elem, key, map) => map.set(key, { value: squared(elem.value) }))
+    const c9 = performance.now();
+    averageTimeMapForEach = averageTimeMapForEach + (c9 - c8);
 }
 
 console.log("Map():");
 console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMAP / loops} milliseconds, Total Time: ${averageTimeMAP / 1000} seconds.`)
 
+console.log("Map.ForEach():");
+console.log(`Loops: ${loops}, List Length: ${listLength}, Number Range: 0 to ${numberRange - 1}, Time per loop: ${averageTimeMapForEach / loops} milliseconds, Total Time: ${averageTimeMapForEach / 1000} seconds.`)
 // let xObject = [];
 
 // for (let i = 0; i < loops; i++) {

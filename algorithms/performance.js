@@ -10,6 +10,7 @@ var averageTimeLoop = 0;
 var averageTimeArrayMap = 0;
 var averageTimeArrayReduce = 0;
 var averageTimeMAP = 0;
+var averageTimeMapForEach = 0;
 var averageTimeObject = 0;
 var listFor = [];
 var listMap = unsortedList;
@@ -47,14 +48,21 @@ for (var i = 0; i < loops; i++) {
     var c6 = performance.now();
     while (unsortedList[index] !== undefined) {
         // xMap.set(index, squared(unsortedList[index]))
-        xMap.set(index, { value: squared(unsortedList[index]) });
+        // xMap.set(index, { value: squared(unsortedList[index])})
+        xMap.set(index, { value: unsortedList[index] });
         index++;
     }
     var c7 = performance.now();
     averageTimeMAP = averageTimeMAP + (c7 - c6);
+    var c8 = performance.now();
+    xMap.forEach(function (elem, key, map) { return map.set(key, { value: squared(elem.value) }); });
+    var c9 = performance.now();
+    averageTimeMapForEach = averageTimeMapForEach + (c9 - c8);
 }
 console.log("Map():");
 console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTimeMAP / loops, " milliseconds, Total Time: ").concat(averageTimeMAP / 1000, " seconds."));
+console.log("Map.ForEach():");
+console.log("Loops: ".concat(loops, ", List Length: ").concat(listLength, ", Number Range: 0 to ").concat(numberRange - 1, ", Time per loop: ").concat(averageTimeMapForEach / loops, " milliseconds, Total Time: ").concat(averageTimeMapForEach / 1000, " seconds."));
 // let xObject = [];
 // for (let i = 0; i < loops; i++) {
 //     let index = 0;

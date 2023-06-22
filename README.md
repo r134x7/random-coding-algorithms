@@ -180,3 +180,19 @@ Simple squared operation - Map<number, {value: number}>() (JavaScript):
 - Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 4.891608999371528 milliseconds, Total Time: 0.48916089993715284 seconds.
 
 - Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 93.42519599676132 milliseconds, Total Time: 9.342519599676132 seconds. 
+
+Map.ForEach() => Simple squared operation - Map<number, {value: number}>() (JavaScript):
+- Loops: 100, List Length: 0, Number Range: 0 to 9999, Time per loop: 0.00027499914169311525 milliseconds, Total Time: 0.000027499914169311524 seconds.
+
+- Loops: 100, List Length: 10, Number Range: 0 to 9999, Time per loop: 0.0017759978771209716 milliseconds, Total Time: 0.00017759978771209717 seconds.
+
+- Loops: 100, List Length: 100, Number Range: 0 to 9999, Time per loop: 0.011147000193595887 milliseconds, Total Time: 0.0011147000193595885 seconds.
+
+- Loops: 100, List Length: 1000, Number Range: 0 to 9999, Time per loop: 0.0333870005607605 milliseconds, Total Time: 0.0033387000560760496 seconds.
+
+- Loops: 100, List Length: 10000, Number Range: 0 to 9999, Time per loop: 0.6245480000972747 milliseconds, Total Time: 0.06245480000972748 seconds.
+
+- Loops: 100, List Length: 100000, Number Range: 0 to 9999, Time per loop: 6.677124003767967 milliseconds, Total Time: 0.6677124003767967 seconds.
+
+- Loops: 100, List Length: 1000000, Number Range: 0 to 9999, Time per loop: 113.38752399861812 milliseconds, Total Time: 11.338752399861812 seconds.
+
