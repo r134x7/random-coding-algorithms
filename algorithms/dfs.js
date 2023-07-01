@@ -1,23 +1,26 @@
+"use strict";
 // depth-first search of binary tree
-var left1 = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.head = exports.right1 = exports.left2 = exports.left1 = void 0;
+exports.left1 = {
     value: 3,
     left: undefined,
     right: undefined,
 };
-var left2 = {
+exports.left2 = {
     value: 6,
     left: undefined,
     right: undefined,
 };
-var right1 = {
+exports.right1 = {
     value: 7,
-    left: left2,
+    left: exports.left2,
     right: undefined,
 };
-var head = {
+exports.head = {
     value: 5,
-    left: left1,
-    right: right1,
+    left: exports.left1,
+    right: exports.right1,
 };
 function depthFirstSearch(current, searchValue) {
     if (current === undefined) {
@@ -33,5 +36,5 @@ function depthFirstSearch(current, searchValue) {
         return depthFirstSearch(current.left, searchValue);
     }
 }
-var x = depthFirstSearch(head, Number(process.argv[2]));
+var x = depthFirstSearch(exports.head, Number(process.argv[2]));
 console.log(x);

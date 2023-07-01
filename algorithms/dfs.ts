@@ -1,30 +1,30 @@
 // depth-first search of binary tree
 
-type BinaryNode<T> = {
+export type BinaryNode<T> = {
     value: T,
     left: BinaryNode<T> | undefined,
     right: BinaryNode<T> | undefined,
 }
 
-const left1 = {
+export const left1 = {
     value: 3,
     left: undefined,
     right: undefined,
 }
 
-const left2 = {
+export const left2 = {
     value: 6,
     left: undefined,
     right: undefined,
 }
 
-const right1 = {
+export const right1 = {
     value: 7,
     left: left2,
     right: undefined,
 }
 
-const head: BinaryNode<number> = {
+export const head: BinaryNode<number> = {
     value: 5,
     left: left1,
     right: right1,
