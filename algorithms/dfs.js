@@ -36,5 +36,24 @@ function depthFirstSearch(current, searchValue) {
         return depthFirstSearch(current.left, searchValue);
     }
 }
+function depthFirstSearchLoop(current, searchValue) {
+    var node = current;
+    while (true) {
+        if (node === undefined) {
+            return false;
+        }
+        if (node.value === searchValue) {
+            return true;
+        }
+        if (node.value < searchValue) {
+            node = node.right;
+        }
+        else {
+            node = node.left;
+        }
+    }
+}
 var x = depthFirstSearch(exports.head, Number(process.argv[2]));
 console.log(x);
+var y = depthFirstSearchLoop(exports.head, Number(process.argv[3]));
+console.log(y);

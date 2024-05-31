@@ -47,5 +47,29 @@ function depthFirstSearch(current: BinaryNode<number> | undefined, searchValue: 
     }
 }
 
+function depthFirstSearchLoop(current: BinaryNode<number> | undefined, searchValue: number): boolean {
+
+    let node = current;
+    while(true) {
+
+        if (node === undefined) {
+            return false;
+        }
+
+        if (node.value === searchValue) {
+            return true;
+        }
+
+        if (node.value < searchValue) {
+            node = node.right;
+        } else {
+            node = node.left;
+        }
+    }
+}
+
 let x = depthFirstSearch(head, Number(process.argv[2]))
 console.log(x)
+
+let y = depthFirstSearchLoop(head, Number(process.argv[3]))
+console.log(y)
